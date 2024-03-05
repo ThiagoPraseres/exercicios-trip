@@ -1,8 +1,18 @@
-let nome = prompt("Digite seu nome:")
-let idade = prompt("Digite sua idade:")
-let cidade = prompt("Digite sua cidade:")
+function salvarUsuarioNoLocalStorage() {
+    const nome = prompt("Digite seu nome:");
+    const idade = prompt("Digite sua idade:");
+    const email = prompt("Digite seu email:");
+  
+    const usuario = {
+      nome: nome,
+      idade: idade,
+      email: email
+    };
+  
+    localStorage.setItem("user", JSON.stringify(usuario));
+  }
+  
+  salvarUsuarioNoLocalStorage();
 
-localStorage.setItem("name", nome);
-localStorage.setItem("age", idade);
-localStorage.setItem("city", cidade);
 
+  
