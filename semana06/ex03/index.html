@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exibir JSON na Página HTML</title>
+</head>
+<body>
+  <div id="jsonContent"></div>
+
+  <script>
+    fetch('data.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Erro ao obter o arquivo JSON');
+        }
+        return response.json();
+      })
+      .then(jsonData => {
+        const jsonContentDiv = document.getElementById('jsonContent');
+        jsonContentDiv.textContent = JSON.stringify(jsonData, null, 2);
+      })
+      .catch(error => {
+        console.error('Erro:', error);
+      });
+  </script>
+</body>
+</html>
+
+
