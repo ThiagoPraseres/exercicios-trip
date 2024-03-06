@@ -12,7 +12,7 @@ async function getUserInfo() {
   async function exibirUserInfo() {
     try {
       console.log("Obtendo informações do usuário...");
-      const userInfo = await getUserInfo(); // Chamada assíncrona para obter informações do usuário
+      const userInfo = await getUserInfo();
       console.log("Informações do usuário:", userInfo);
     } catch (error) {
       console.error("Erro ao obter informações do usuário:", error);
